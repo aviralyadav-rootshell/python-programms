@@ -1,0 +1,10 @@
+import socket
+client=socket.socket()
+host=socket.gethostname()
+port=4447
+client.connect((host,port))
+while True:
+   send= input("You : ")
+   client.send(str.encode(send))
+   reply = client.recv(1023)
+   print(f"prati :{reply} ")
